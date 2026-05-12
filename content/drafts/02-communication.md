@@ -22,7 +22,7 @@ order: 2
 - **Do you prefer "thinking out loud" in a meeting or "writing it out" in a doc?**
   - I value **Docs for collaboration**. I encourage my directs to share early drafts or half-formed ideas with me. I would much rather be "in the loop" early to avoid surprises than have you worry about oversharing.
 - **How do you feel about unscheduled "pings" or "drive-by" calls?**
-  - One-off pings on Slack are absolutely fine. However, if you need a video chat or a deeper discussion, please try to schedule time on my calendar. This helps me protect my focus and ensures I can give you my full attention.
+  - One-off pings on Slack are absolutely fine. However, if you need a video chat or a deeper discussion, please try to schedule time on my calendar (even if it's short notice). This helps me protect my focus and ensures I can give you my full attention.
 
 ### Nuance & Tone
 - **How should people interpret your silence in a meeting?**
