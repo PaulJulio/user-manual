@@ -6,7 +6,7 @@ order: 7
 
 # Troubleshooting: Stress & Conflict
 
-*Core Goal: A manual for when things aren't going well.*
+*Core Goal: Recognize my stress signals and understand the protocol for resolving conflict or re-earning trust when challenges arise.*
 
 ### Stress Signals
 - **How will I know when you are overwhelmed?**

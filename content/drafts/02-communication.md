@@ -6,7 +6,7 @@ order: 2
 
 # Communication Style & Preferences
 
-*Core Goal: Minimize the "guessing game" of daily interaction.*
+*Core Goal: Learn how to navigate my communication style to maximize signal and minimize friction in our daily interactions.*
 
 ### Channels & Response Times
 - **What is your "Default" channel for general chat?**

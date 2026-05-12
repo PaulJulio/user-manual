@@ -6,7 +6,7 @@ order: 3
 
 # Feedback & Recognition
 
-*Core Goal: Optimize how you grow and how you are appreciated.*
+*Core Goal: Identify the most effective ways for us to exchange high-fidelity feedback and celebrate mission success together.*
 
 ### Receiving Feedback
 - **Timing:** I prefer **"Hot Feedback"** delivered in the moment or directly after a meeting or event. This allows us to course-correct in real-time while the context is fresh.

@@ -6,7 +6,7 @@ order: 4
 
 # Ideal Working Conditions & Rhythm
 
-*Core Goal: Protect your productivity and energy.*
+*Core Goal: Understand the rhythm of my workday so you can identify the best times for deep collaboration or urgent coordination.*
 
 ### The Clock
 - **What are your "Hard Start" and "Hard Stop" times?**

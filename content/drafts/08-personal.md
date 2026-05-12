@@ -6,7 +6,7 @@ order: 8
 
 # Personal Context: Roots, Family & Passions
 
-*Core Goal: Build deep rapport and explain how your background shapes your professional "Operating System."*
+*Core Goal: Gain context on my background—from the Marines to the Puget Sound—to better understand the roots of my professional values.*
 
 ### Military & Professional Roots
 - **The "Commander's Intent" & High-Stakes Experience:**
@@ -25,7 +25,7 @@ order: 8
 
 ### Life in General
 - **Boating:**
-  - I am the captain of a 48-foot boat (essentially a floating motor home) that I take out on the Puget Sound. Navigating the Sound, especially during crabbing season in July and August. My natural leadership tendencies are on full display when I'm teaching folks new skills on the water. 
+  - I am the captain of a 48-foot boat (essentially a floating motor home) that I take out on the Puget Sound, especially during crabbing season in July and August. My natural leadership tendencies are on full display when I'm teaching folks new skills on the water. 
   - It's a bit harder to get folks to come out on the water in the winter months, but activities like whale watching or island exploring are still a lot of fun, especially when it feels like you have all the water to yourself!
 - **Baseball:**
   - I am a dedicated SF Giants fan and attend at least 30 games a year with friends and family. Baseball is the ultimate "High-Signal" environment for me—it provides the perfect tempo to chat, build relationships, and enjoy the company of others. If you want to talk strategy or just share a story, a game is my favorite place to do it.

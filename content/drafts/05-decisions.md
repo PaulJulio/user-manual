@@ -6,7 +6,7 @@ order: 5
 
 # Decision-Making & Problem Solving
 
-*Core Goal: Align on how choices are made to avoid frustration.*
+*Core Goal: Align on how decisions are made and how we resolve technical disagreements to move the mission forward without delay.*
 
 ### Decision Style
 - **Are you Analytical, Intuitive, or Collaborative?**
