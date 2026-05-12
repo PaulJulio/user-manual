@@ -11,5 +11,14 @@ The goal of this project is to provide a clear reference site that explains my w
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Hosting:** [GitHub Pages](https://pages.github.com/)
 
-## 🚀 Getting Started
-This project is currently in the initialization phase. Content and structure will be added as we progress.
+## 📊 Current Progress
+We have completed the initial research phase on the `research/user-manual-sections` branch.
+
+- **Research Compiled:**
+    - [High-Level Sections](research/sections.md): A summary of the core themes.
+    - [Granular Questions](research/sections_detailed.md): An exhaustive list of prompts, including deep dives into military background, large family dynamics, and boating.
+
+## 🚀 Next Steps
+1. **Planning:** Review the research and select the most impactful questions.
+2. **Drafting:** Begin writing the content for each section on a new feature branch.
+3. **Site Implementation:** Set up the Jekyll/Tailwind environment to host the manual.
