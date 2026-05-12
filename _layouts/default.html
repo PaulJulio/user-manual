@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     {% seo %}
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace; }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased">
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
-        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="{{ '/' | relative_url }}" class="text-xl font-bold text-indigo-600">{{ site.title }}</a>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-700">
+    <header class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="{{ '/' | relative_url }}" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:bg-indigo-700 transition-colors shadow-sm">
+                    P
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors uppercase">{{ site.title }}</span>
+            </a>
             <nav>
-                <ul class="flex space-x-6 text-sm font-medium text-slate-600">
-                    <li><a href="{{ '/' | relative_url }}" class="hover:text-indigo-600 transition">Home</a></li>
-                    <!-- Navigation items will be dynamically generated later -->
+                <ul class="flex items-center space-x-8 text-sm font-semibold text-slate-600 uppercase tracking-wider">
+                    <li><a href="{{ '/' | relative_url }}" class="hover:text-indigo-600 transition-colors">Home</a></li>
+                    <li><a href="https://github.com/PaulJulio/user-manual" class="bg-slate-900 text-white px-4 py-2 rounded-full hover:bg-slate-800 transition-colors shadow-sm">Source</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-12">
+    <main class="min-h-screen">
         {{ content }}
     </main>
 
-    <footer class="border-t border-slate-200 mt-20 py-8 bg-white">
-        <div class="max-w-4xl mx-auto px-4 text-center text-slate-500 text-sm">
-            &copy; {{ site.time | date: '%Y' }} {{ site.title }}. Built with Jekyll and Tailwind CSS.
+    <footer class="bg-white border-t border-slate-200 py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="text-slate-500 text-sm font-medium">
+                    &copy; {{ site.time | date: '%Y' }} {{ site.title }}. Built with discipline and AI.
+                </div>
+                <div class="flex space-x-6 text-slate-400">
+                    <span class="text-xs uppercase tracking-widest font-bold">Signal Over Noise</span>
+                </div>
+            </div>
         </div>
     </footer>
 </body>

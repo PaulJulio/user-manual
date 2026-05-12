@@ -1,7 +1,57 @@
 ---
 layout: default
 ---
-<article class="prose prose-slate lg:prose-lg max-w-none">
-    <h1 class="text-3xl font-extrabold text-slate-900 mb-8">{{ page.title }}</h1>
-    {{ content }}
-</article>
+<div class="max-w-4xl mx-auto px-6 py-20">
+    <nav class="mb-12">
+        <a href="{{ '/' | relative_url }}" class="text-sm font-bold text-indigo-600 uppercase tracking-widest hover:text-indigo-700 flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Back to Index</span>
+        </a>
+    </nav>
+    
+    <header class="mb-16 border-l-4 border-indigo-600 pl-8 py-2">
+        <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight leading-none mb-4">{{ page.title }}</h1>
+        <p class="text-xl text-slate-500 font-medium">Section {{ page.order }} of the Personal Manual</p>
+    </header>
+
+    <article class="prose prose-slate lg:prose-xl max-w-none 
+      prose-headings:text-slate-900 prose-headings:font-extrabold prose-headings:tracking-tight
+      prose-a:text-indigo-600 prose-a:no-underline hover:prose-a:text-indigo-700
+      prose-strong:text-slate-900 prose-strong:font-bold
+      prose-blockquote:border-indigo-500 prose-blockquote:bg-indigo-50 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
+      prose-code:text-indigo-600 prose-code:bg-indigo-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none">
+        {{ content }}
+    </article>
+
+    <div class="mt-24 pt-12 border-t border-slate-200 flex justify-between">
+        {% assign current_order = page.order %}
+        {% assign prev_order = current_order | minus: 1 %}
+        {% assign next_order = current_order | plus: 1 %}
+        
+        {% assign pages = site.pages | where_exp: "item", "item.path contains 'content/drafts/'" | sort: "order" %}
+        
+        <div class="w-1/2">
+            {% for p in pages %}
+                {% if p.order == prev_order %}
+                    <a href="{{ p.url | relative_url }}" class="group block">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Previous</span>
+                        <span class="block text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">{{ p.title }}</span>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <div class="w-1/2 text-right">
+            {% for p in pages %}
+                {% if p.order == next_order %}
+                    <a href="{{ p.url | relative_url }}" class="group block">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Next</span>
+                        <span class="block text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">{{ p.title }}</span>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
