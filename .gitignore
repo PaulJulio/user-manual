@@ -1,4 +1,20 @@
+# Dependency directories
+node_modules/
+vendor/
+.bundle/
+
+# Build directories
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Tailwind output
+assets/css/style.css
 
 # MemPalace per-project files (issue #185)
 mempalace.yaml
 entities.json
+
+# Environment variables
+.env
+.env.local

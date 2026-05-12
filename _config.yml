@@ -1,0 +1,38 @@
+title: User Manual
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  A comprehensive guide on how to work with me.
+baseurl: "/user-manual" # the subpath of your site, e.g. /blog
+url: "https://PaulJulio.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "env vars" list.
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gem_make.out
+  - .bundle/
+  - vendor/
+  - bundle/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+  - README.md
+  - LICENSE.txt
+  - .git/
+  - .gitignore
+  - research/
+  - plans/
+  - .gemini-kit/

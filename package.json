@@ -1,0 +1,32 @@
+{
+  "name": "user-manual",
+  "version": "1.0.0",
+  "description": "Welcome to my personal \"User Manual\". This project is a comprehensive guide on how to work with me, designed for my co-workers and anyone interested in our professional collaboration.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css",
+    "build:jekyll": "bundle exec jekyll build",
+    "build": "npm run build:css && npm run build:jekyll",
+    "watch:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
+    "dev": "concurrently \"npm run watch:css\" \"bundle exec jekyll serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulJulio/user-manual.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PaulJulio/user-manual/issues"
+  },
+  "homepage": "https://github.com/PaulJulio/user-manual#readme",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^4.3.0"
+  }
+}
