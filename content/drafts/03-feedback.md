@@ -4,8 +4,6 @@ layout: page
 order: 3
 ---
 
-# Feedback & Recognition
-
 *Core Goal: Identify the most effective ways for us to exchange high-fidelity feedback and celebrate mission success together.*
 
 ### Receiving Feedback

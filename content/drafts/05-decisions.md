@@ -4,8 +4,6 @@ layout: page
 order: 5
 ---
 
-# Decision-Making & Problem Solving
-
 *Core Goal: Align on how decisions are made and how we resolve technical disagreements to move the mission forward without delay.*
 
 ### Decision Style
