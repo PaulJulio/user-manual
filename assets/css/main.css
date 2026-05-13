@@ -51,13 +51,13 @@
 .right-col .prose > ul > li,
 .right-col .prose > ol > li,
 .right-col .prose > p {
-  @apply py-6 px-8 -mx-8 border-b border-border-muted/50 last:border-0 transition-colors;
+  @apply py-6 px-8 -mx-8 border-b border-border-muted/50 last:border-0 transition-colors bg-slate-100;
 }
 
 .right-col .prose > ul > li:nth-child(even),
 .right-col .prose > ol > li:nth-child(even),
 .right-col .prose > p:nth-of-type(even) {
-  @apply bg-surface-muted/30;
+  @apply bg-emerald-50;
 }
 
 /* Remove default prose margins that conflict with our item padding */
@@ -94,8 +94,14 @@
 }
 
 .reveal-btn {
-  @apply absolute bottom-0 right-0 bg-white/90 backdrop-blur-sm pl-4 pr-1 py-0.5 text-brand-indigo hover:text-brand-indigo-dark transition-colors flex items-center cursor-pointer;
-  box-shadow: -20px 0 15px -5px white;
+  @apply absolute bottom-0 right-0 px-4 pr-1 py-0.5 text-brand-indigo hover:text-brand-indigo-dark transition-colors flex items-center cursor-pointer rounded-tl-xl;
+  background: linear-gradient(to right, transparent, var(--color-surface-bg) 20%);
+}
+
+.right-col .prose > ul > li:nth-child(even) .reveal-btn,
+.right-col .prose > ol > li:nth-child(even) .reveal-btn,
+.right-col .prose > p:nth-of-type(even) .reveal-btn {
+  background: linear-gradient(to right, transparent, #ecfdf5 20%); /* Matches emerald-50 */
 }
 
 .is-expanded .line-clamp-2 {
