@@ -1,90 +1,58 @@
-# 📋 Implementation Plan: Modular UI Refactor
+# 📋 Implementation Plan: Modular UI Refactor (v2 - High-Signal Synthesis)
 
-Refactor the User Manual UI to a modern, card-based modular layout with interactive accordions and adaptive color tokens for better readability and a professional "dashboard" feel.
+Refactor the User Manual UI to a modern, card-based modular layout that acts as a "Dashboard" for Paul's professional Operating System. This design is directly informed by his roots as a **US Marine** and **9-1-1 Dispatcher**, his focus on **AI Mastery**, and his **"No Surprises"** philosophy.
 
 ## ## Approach
-- **Adaptive Color Tokens:** Transition from hardcoded Tailwind classes to CSS variables defined in `@theme`. This allows for theme flexibility and centralized design control.
-- **Card-based Layout:** Move away from a single flow of text to a structured "Information Architecture" using cards to group logical sections (e.g., Values, Scope, Learning).
-- **Interactive Accordions:** Use native `<details>` and `<summary>` elements styled with Tailwind for "Interactive Accordions" to handle high-density information (like detailed lists) without overwhelming the user.
-- **Modular Components:** Create Jekyll includes for `card.html` and `accordion.html` to ensure consistency across pages.
+- **Adaptive Color Tokens:** Transition to CSS variables in `@theme` using a "Relentless Excellence" palette: deep slate, indigo accents, and high-contrast text to ensure **Semantic Precision** is never clouded by poor legibility.
+- **Bento Grid Architecture:** Structure the 8 core sections into a modular grid. High-leverage categories (Identity, Scope, Decision-Making) will take larger "Hero Cards," while others (Rhythm, Personal Context) use supporting cards.
+- **Root-Value Mapping:** Create a "Roots & Values" component that visualizes how formative experiences (Marines, 9-1-1, Large Family) directly inform the "Top 3 Values" and "Stakeholder Scope."
+- **Interactive "AI-Ready" Accordions:** Use `<details>` for the "Master List" of granular questions. This maintains **High-Signal Synthesis** for human readers while keeping the full Markdown accessible for AI tools (following the "AI-Ready Documentation" rule).
+- **Personalized Visual Identity:** Incorporate subtle design cues for his passions (Puget Sound boating, SF Giants) without cluttering the professional signal.
 
 ## ## Steps
 
 1. **Define Adaptive Color Tokens** (15 min)
-   - Modify `assets/css/main.css` to include a `@theme` block with CSS variables.
-   - Define tokens for: `surface-primary`, `surface-secondary`, `border-muted`, `accent-primary`, `text-heading`, `text-body`.
-   ```css
-   @theme {
-     --color-brand-indigo: #4f46e5;
-     --color-surface-card: #ffffff;
-     --color-surface-bg: #f8fafc;
-     --border-radius-card: 1rem;
-     /* ... */
-   }
-   ```
+   - Update `assets/css/main.css` with `@theme` variables.
+   - Set `--color-brand-indigo` and `--color-surface-bg: #f8fafc` (slate-50).
+   - Ensure color contrast meets AA standards for "Excellence."
 
-2. **Configure Tailwind v4 Compatibility** (10 min)
-   - Ensure `tailwind.config.js` (if still needed) or `main.css` correctly maps these tokens.
-   - Update `tailwind.config.js` to include the new tokens in the `extend` block if they aren't auto-detected by v4.
+2. **Tailwind v4 / Typography Optimization** (15 min)
+   - Configure `@tailwindcss/typography` to handle nested cards.
+   - Add a custom `prose-ai` class for the "AI-Ready" documentation sections.
 
-3. **Create Modular Components** (20 min)
-   - Create `_includes/ui/card.html`:
-     ```html
-     <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-       {% if include.title %}
-       <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50">
-         <h3 class="text-lg font-bold text-slate-900 m-0">{{ include.title }}</h3>
-       </div>
-       {% endif %}
-       <div class="p-6">
-         {{ include.content }}
-       </div>
-     </div>
-     ```
-   - Create `_includes/ui/accordion.html`:
-     ```html
-     <details class="group border-b border-slate-100 last:border-0">
-       <summary class="flex justify-between items-center cursor-pointer py-4 list-none">
-         <span class="font-semibold text-slate-800">{{ include.label }}</span>
-         <span class="transition group-open:rotate-180">
-           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 9l-7 7-7-7" /></svg>
-         </span>
-       </summary>
-       <div class="pb-4 text-slate-600 prose prose-sm max-w-none">
-         {{ include.content }}
-       </div>
-     </details>
-     ```
+3. **Develop Modular UI Components** (30 min)
+   - `_includes/ui/card.html`: Support for titles, icons, and flexible content.
+   - `_includes/ui/accordion.html`: Native HTML structure with custom Tailwind markers.
+   - `_includes/ui/roots-map.html`: Specialized component for the Marine/Dispatcher -> Value mapping.
 
-4. **Refactor Page Layout** (20 min)
-   - Modify `_layouts/page.html` to support a grid or stacked card layout.
-   - Introduce a `content_blocks` system if possible, or update the main container to `bg-slate-50`.
+4. **Refactor Page Layouts** (20 min)
+   - `_layouts/page.html`: Switch to a max-width container with a subtle card-stacking effect on mobile.
+   - `_layouts/default.html`: Refine the sidebar to highlight the "8-Section Dashboard."
 
-5. **Content Migration & Enhancement** (30 min)
-   - Update `index.md` to wrap "Who are you?" and "Scope" into cards.
-   - Use accordions for the "What Stakeholders should come to you for" and "What Direct Reports should come to you for" sections to reduce vertical scrolling.
+5. **Content Migration & Strategic Synthesis** (45 min)
+   - **Identity Card:** Merge elevator pitch and 9-1-1/Marine roots.
+   - **Scope Card:** Use the "Alignment Map" component to show Stakeholder vs. Direct Report value.
+   - **Personal Card:** Use a sub-grid for Boating, Baseball, and Family context.
+   - **Quirks/Stress:** Use accordions for "Pet Peeves" and "Stress Signals."
 
 6. **Testing & Validation** (15 min)
-   - Verify responsiveness on mobile/desktop.
-   - Test interactive accordion transitions.
-   - Check color token consistency across pages.
+   - Run `npm run build` and verify all draft content is correctly rendered.
+   - Check responsiveness on mobile (essential for "on-the-go" stakeholders).
 
 ## ## Timeline
 | Phase | Duration |
 |-------|----------|
-| Token Definition | 15 min |
-| Config & Setup | 10 min |
-| Component Dev | 20 min |
+| Token & Config | 30 min |
+| Component Dev | 30 min |
 | Layout Refactor | 20 min |
-| Content Update | 30 min |
+| Strategic Content Update | 45 min |
 | Validation | 15 min |
-| **Total** | **~2 hours** |
+| **Total** | **~2.5 hours** |
 
 ## ## Rollback Plan
-- Revert `assets/css/main.css` and `_layouts/page.html` to previous git state.
-- Delete new `_includes/ui/` directory.
+- Revert via `git checkout main` (current branch is `design/color-and-layout`).
+- Remove `_includes/ui/` and revert `assets/css/main.css`.
 
 ## ## Security Checklist
-- [x] No sensitive data in UI
-- [x] Validate HTML structure for accessibility (ARIA labels for accordions)
-- [x] Ensure CSS/JS doesn't introduce XSS vectors (Jekyll handles markdown sanitization)
+- [x] No PII exposed beyond what's in the draft files.
+- [x] Maintain "AI-Ready" accessibility standards.
