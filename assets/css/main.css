@@ -21,7 +21,7 @@
   --color-border-accent: #e0e7ff;
 }
 
-/* Verbatim content card refinements */
+/* Verbatim content grid layout */
 .verbatim-content section {
   @apply grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 mb-24 last:mb-0 items-start;
   transition-property: all;
@@ -45,6 +45,40 @@
 .verbatim-content .prose h4 {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+/* Item Separation & Alternating Backgrounds */
+.right-col .prose > ul > li,
+.right-col .prose > ol > li,
+.right-col .prose > p {
+  @apply py-6 px-8 -mx-8 border-b border-border-muted/50 last:border-0 transition-colors;
+}
+
+.right-col .prose > ul > li:nth-child(even),
+.right-col .prose > ol > li:nth-child(even),
+.right-col .prose > p:nth-of-type(even) {
+  @apply bg-surface-muted/30;
+}
+
+/* Remove default prose margins that conflict with our item padding */
+.right-col .prose > ul,
+.right-col .prose > ol {
+  @apply my-0;
+}
+
+.right-col .prose > ul > li > p:first-child,
+.right-col .prose > ol > li > p:first-child {
+  @apply mt-0;
+}
+
+.right-col .prose > ul > li > p:last-child,
+.right-col .prose > ol > li > p:last-child {
+  @apply mb-0;
+}
+
+/* Fix Reveal Container spacing within itemized blocks */
+.reveal-container {
+  @apply mt-2;
 }
 
 /* Verbatim Clamping System */
