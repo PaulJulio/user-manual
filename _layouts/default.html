@@ -84,10 +84,44 @@
     </div>
 
     <script>
+        // Mobile menu toggle
         const btn = document.getElementById('mobile-menu-toggle');
         const sidebar = document.getElementById('sidebar');
         btn.addEventListener('click', () => {
             sidebar.classList.toggle('-translate-x-full');
+        });
+
+        // Verbatim Clamping System
+        document.addEventListener('DOMContentLoaded', () => {
+            const contentBlocks = document.querySelectorAll('.right-col .prose p, .right-col .prose li:not(:has(ul)):not(:has(ol))');
+            
+            contentBlocks.forEach(block => {
+                // Only clamp if block is long enough (approx > 2 lines)
+                if (block.offsetHeight > 56) {
+                    const container = document.createElement('div');
+                    container.className = 'reveal-container';
+                    block.parentNode.insertBefore(container, block);
+                    container.appendChild(block);
+                    block.classList.add('line-clamp-2');
+
+                    const revealBtn = document.createElement('div');
+                    revealBtn.className = 'reveal-btn';
+                    revealBtn.innerHTML = `
+                        <span class="text-[10px] font-black uppercase tracking-widest mr-2">Expand</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    `;
+                    
+                    revealBtn.addEventListener('click', () => {
+                        container.classList.toggle('is-expanded');
+                        const isExpanded = container.classList.contains('is-expanded');
+                        revealBtn.querySelector('span').innerText = isExpanded ? 'Collapse' : 'Expand';
+                    });
+
+                    container.appendChild(revealBtn);
+                }
+            });
         });
     </script>
 </body>

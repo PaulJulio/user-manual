@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-<div class="max-w-4xl px-8 py-12 lg:px-16">
-    <div class="mb-12">
-        <h1 class="text-4xl lg:text-5xl font-black text-text-heading tracking-tighter italic mb-4">{{ page.title }}</h1>
+<div class="max-w-6xl px-8 py-12 lg:px-16 mx-auto">
+    <div class="mb-16">
+        <h1 class="text-4xl lg:text-6xl font-black text-text-heading tracking-tighter italic mb-4">{{ page.title }}</h1>
         <div class="h-1 w-20 bg-brand-indigo rounded-full"></div>
     </div>
 
@@ -13,33 +13,40 @@ layout: default
             
             <!-- Intro Content (Before first h3) -->
             {% if parts[0] != "" %}
-            <section class="bg-white border border-border-muted rounded-2xl shadow-sm overflow-hidden mb-12">
-                <div class="p-8 prose prose-slate lg:prose-xl max-w-none">
+            <div class="mb-16">
+                <div class="prose prose-slate lg:prose-xl max-w-none prose-headings:m-0">
                     {{ parts[0] }}
                 </div>
-            </section>
+            </div>
             {% endif %}
 
             <!-- Sections (Starting with h3) -->
             {% for part in parts offset:1 %}
-                <section class="bg-white border border-border-muted rounded-2xl shadow-sm overflow-hidden mb-12">
+                <section>
                     {% assign subparts = part | split: '</h3>' %}
                     {% assign header_parts = subparts[0] | split: '>' %}
                     {% assign header_text = header_parts | last %}
                     {% assign header_attrs = header_parts | first | strip %}
                     
-                    <div class="px-8 py-5 border-b border-border-muted bg-surface-muted/50">
-                        <h3 class="text-xl font-black text-text-heading tracking-tighter italic m-0" {{ header_attrs }}>{{ header_text }}</h3>
+                    <!-- Left Column: Header -->
+                    <div class="left-col">
+                        <div class="md:sticky md:top-12">
+                            <h3 class="text-2xl lg:text-3xl font-black text-text-heading tracking-tighter italic m-0 border-l-4 border-brand-indigo pl-6 py-2" {{ header_attrs }}>{{ header_text }}</h3>
+                        </div>
                     </div>
-                    <div class="px-8 py-8 prose prose-slate max-w-none 
-                      prose-p:text-text-body prose-p:leading-relaxed
-                      prose-a:text-brand-indigo prose-a:no-underline hover:prose-a:text-brand-indigo-dark prose-a:font-semibold
-                      prose-strong:text-text-heading prose-strong:font-bold
-                      prose-blockquote:border-l-4 prose-blockquote:border-brand-indigo prose-blockquote:italic prose-blockquote:text-text-body prose-blockquote:bg-surface-muted prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl
-                      prose-li:text-text-body
-                      prose-code:text-brand-indigo prose-code:bg-brand-indigo/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none
-                      prose-img:rounded-2xl prose-img:shadow-lg">
-                        {{ subparts[1] }}
+
+                    <!-- Right Column: Content -->
+                    <div class="right-col">
+                        <div class="bg-white border border-border-muted rounded-2xl shadow-sm p-8 prose prose-slate max-w-none 
+                          prose-p:text-text-body prose-p:leading-relaxed
+                          prose-a:text-brand-indigo prose-a:no-underline hover:prose-a:text-brand-indigo-dark prose-a:font-semibold
+                          prose-strong:text-text-heading prose-strong:font-bold
+                          prose-blockquote:border-l-4 prose-blockquote:border-brand-indigo prose-blockquote:italic prose-blockquote:text-text-body prose-blockquote:bg-surface-muted prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl
+                          prose-li:text-text-body
+                          prose-code:text-brand-indigo prose-code:bg-brand-indigo/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none
+                          prose-img:rounded-2xl prose-img:shadow-lg">
+                            {{ subparts[1] }}
+                        </div>
                     </div>
                 </section>
             {% endfor %}

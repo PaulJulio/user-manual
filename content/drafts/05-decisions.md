@@ -15,7 +15,7 @@ order: 5
   - I must own all **one-way doors** (irreversible decisions) and any **changes to promises** we have made to stakeholders or other teams.
   - For everything else: **"No surprises, no heroes."** If you are highly confident and believe we should move without waiting, I encourage you to take risks you feel are worth taking—just ensure I am kept in the loop. I value calculated action over perfect consensus, provided there is accountability.
 
-### Technical/Professional Disagreements
+### Technical & Professional Disagreements
 - **What is your "Tie-breaker" protocol when a team is at a stalemate?**
   - I evaluate stalemates against several key (unordered) signals:
     - **Passion & Conviction:** If a team member has a deep conviction I don't fully understand yet, I give that credit—passion often signals a nuance I might be missing.
