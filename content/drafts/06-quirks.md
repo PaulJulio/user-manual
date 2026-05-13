@@ -4,8 +4,6 @@ layout: page
 order: 6
 ---
 
-# Strengths, Blind Spots & Quirks
-
 *Core Goal: Familiarize yourself with my professional superpowers and quirks to help you anticipate my reactions and working style.*
 
 ### The Good & The Bad

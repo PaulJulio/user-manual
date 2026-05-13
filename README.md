@@ -74,6 +74,3 @@ Once the server is running, open your browser to:
 
 ## 🙏 Thank You
 Thank you for taking the time to look through this repository and my manual. I value transparency and collaboration, and I hope this resource makes our time working together more effective and enjoyable.
-
----
-*Built with the assistance of Gemini CLI.*

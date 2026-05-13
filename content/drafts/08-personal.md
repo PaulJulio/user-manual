@@ -4,8 +4,6 @@ layout: page
 order: 8
 ---
 
-# Personal Context: Roots, Family & Passions
-
 *Core Goal: Gain context on my background—from the Marines to the Puget Sound—to better understand the roots of my professional values.*
 
 ### Military & Professional Roots
